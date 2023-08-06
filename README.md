@@ -289,7 +289,7 @@ __DL__jQueryinterval = setInterval(function(){
                         'item_id'        : {{product.id | json}},                  
                         'item_variant'    : {{product.selected_variant.title | json}},             
                         'item_name'      : {{product.title | json}},
-                        'price'           : {{product.price | money_without_currency | replace: ',', '.' | json}},
+                        'price'           : parseFloat({{product.price | money_without_currency | replace: ',', '.' | json}}),
                         'item_brand'      : {{product.vendor | json}},
                         'item_category'   : {{product.type | json}},
                         'item_list_name'  : {{collection.title | json}},
@@ -315,7 +315,7 @@ __DL__jQueryinterval = setInterval(function(){
                     'item_id'        : {{product.id | json}},  
                     'item_variant'    : {{product.selected_variant.title | json}},             
                     'item_name'      : {{product.title | json}},
-                    'price'           : {{product.price | money_without_currency | replace: ',', '.' | json}},
+                    'price'           : parseFloat({{product.price | money_without_currency | replace: ',', '.' | json}}),
                     'item_brand'      : {{product.vendor | json}},
                     'item_category'   : {{product.type | json}},
                     'item_list_name'  : {{collection.title | json}},
@@ -348,7 +348,7 @@ __DL__jQueryinterval = setInterval(function(){
                     'item_id'        : {{line_item.product.id | json}},                  
                     'item_variant'    : {{line_item.variant.title | json}},             
                     'item_name'      : {{line_item.product.title | json}},
-                    'price'           : {{line_item.product.price | money_without_currency | replace: ',', '.' | json}},
+                    'price'           : parseFloat({{line_item.product.price | money_without_currency | replace: ',', '.' | json}}),
                     'item_brand'      : {{line_item.product.vendor | json}},
                     'item_category'   : {{line_item.product.type | json}},
                     'item_list_name'  : {{line_item.collection.title | json}},
@@ -382,7 +382,7 @@ __DL__jQueryinterval = setInterval(function(){
                     'item_id'        : {{line_item.product.id | json}},                  
                     'item_variant'    : {{line_item.variant.title | json}},             
                     'item_name'      : {{line_item.product.title | json}},
-                    'price'           : {{line_item.product.price | money_without_currency | replace: ',', '.' | json}},
+                    'price'           : parseFloat({{line_item.product.price | money_without_currency | replace: ',', '.' | json}}),
                     'item_brand'      : {{line_item.product.vendor | json}},
                     'item_category'   : {{line_item.product.type | json}},
                     'item_list_name'  : {{line_item.collection.title | json}},
@@ -436,7 +436,7 @@ __DL__jQueryinterval = setInterval(function(){
                         'item_id'        : {{product.id | json}},                  
                         'item_variant'    : {{product.variant.title | json}},             
                         'item_name'      : {{product.title | json}},
-                        'price'           : {{product.price | money_without_currency | replace: ',', '.' | json}},
+                        'price'           : parseFloat({{product.price | money_without_currency | replace: ',', '.' | json}}),
                         'item_brand'      : {{product.vendor | json}},
                         'item_category'   : {{product.type | json}},
                         'item_list_name'  : {{product.collection.title | json}},
@@ -458,7 +458,7 @@ __DL__jQueryinterval = setInterval(function(){
                         'item_id'        : {{line_item.product.id | json}},                  
                         'item_variant'    : {{line_item.variant.title | json}},             
                         'item_name'      : {{line_item.product.title | json}},
-                        'price'           : {{line_item.product.price | money_without_currency | replace: ',', '.' | json}},
+                        'price'           : parseFloat({{line_item.product.price | money_without_currency | replace: ',', '.' | json}}),
                         'item_brand'      : {{line_item.product.vendor | json}},
                         'item_category'   : {{line_item.product.type | json}},
                         'item_list_name'  : {{line_item.collection.title | json}},
@@ -475,13 +475,6 @@ __DL__jQueryinterval = setInterval(function(){
                     });                                 
                 });               
             {% endif %}
-
-            /** Google Tag Manager **/
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-XXXXXXX');
 
         }); // document ready
     }
